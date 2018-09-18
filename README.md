@@ -40,7 +40,7 @@ This project consist of the follwoing parts:
 
 This section consisted of just cleaning and preparing the dataset for machine learning. The dataset consisted of 2 seperate dataset which was cleaned, then merged in to a single dataset and stored in a SQLite database.
 
-1. ML Pipeline
+2. ML Pipeline
 
 Our model pipeline has the follwoing structure:
 ```
@@ -54,8 +54,8 @@ We used the TF-IDF feature extraction technique with multi-output classification
 
 To improve our model, we used **GridSearchCV** to find the best parameters combination for the model. However, this process took us several hours to complete
  
-1. Data Visualization
-1.1 Distribution of Message Genres related to natural disasters
+3. Data Visualization
+3.1 Distribution of Message Genres related to natural disasters
 
 Data visualization was added to the web app using Plotify. And the visualization was on message genres which are related to natural disasters like(**Weather Related, Floods, Storm, Earthquake**). The aim of this visualization was to show the distribution of these message genres. 
 
