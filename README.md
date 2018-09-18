@@ -1,8 +1,8 @@
 # Disaster Response Pipeline Project
 
 ### Synopsis:
-This project consist of the follwoing parts:
-- **ETL Pipeline**: Here, we build load the different datasets, and write a cleaning pipeline to clean, merge and store the data in a SQLite database
+This project consists of the following parts:
+- **ETL Pipeline**: Here, we build load the different datasets, and write a cleaning pipeline to clean, merge and store the data in an SQLite database
 - **ML Pipeline**: Here, we write a machine learning pipeline that load data from SQLite database, split the dataset into training and test sets, build a text processing and machine learning pipeline, train and tune the model using GridSearchCV, output results on the test set and export the final model as a pickle file
 - **Flask Web App**: Here, we modify an already prepared web app by adding data visualizations using Plotly. Also, we modify file paths for database and model as needed.
 
@@ -38,11 +38,11 @@ This project consist of the follwoing parts:
 
 1. ETL Pipeline
 
-This section consisted of just cleaning and preparing the dataset for machine learning. The dataset consisted of 2 seperate dataset which was cleaned, then merged in to a single dataset and stored in a SQLite database.
+This section consisted of just cleaning and preparing the dataset for machine learning. The dataset consisted of 2 separate datasets which were cleaned, then merged into a single dataset and stored in an SQLite database.
 
-2. ML Pipeline
+1. ML Pipeline
 
-Our model pipeline has the follwoing structure:
+Our model pipeline has the following structure:
 ```
     pipeline = Pipeline([
             ('vect', CountVectorizer(tokenizer=tokenize)),
@@ -54,17 +54,22 @@ We used the TF-IDF feature extraction technique with multi-output classification
 
 To improve our model, we used **GridSearchCV** to find the best parameters combination for the model. However, this process took us several hours to complete
  
-3. Data Visualization
-
-3.1 Distribution of Message Genres related to natural disasters
+1. Data Visualization
+1.1 Distribution of Message Genres related to natural disasters
 
 Data visualization was added to the web app using Plotify. And the visualization was on message genres which are related to natural disasters like(**Weather Related, Floods, Storm, Earthquake**). The aim of this visualization was to show the distribution of these message genres. 
 
 ![title](Images/messageGenres.png)
 **Figure 1**
 
-From the graph above, we see clearly that messages related to earthquake record more counts in every genre type. Messages related to floods are almost not reported in social genre.
+From the graph above, we see clearly that messages related to earthquake record more counts in every genre type. Messages related to floods are almost not reported in the social genre.
 
 ### Note:
 - The GridSearchCV is too expensive. For this project, it took us several hours to complete
 
+### Links and References:
+- [Multiclass and multilabel algorithms](http://scikit-learn.org/stable/modules/multiclass.html#multiclass)
+- [MultiOutputClassifier](http://scikit-learn.org/stable/modules/generated/sklearn.multioutput.MultiOutputClassifier.html)
+- [Hyperparameter Tuning the Random Forest in Python](https://towardsdatascience.com/hyperparameter-tuning-the-random-forest-in-python-using-scikit-learn-28d2aa77dd74)
+- [GridSearchCV](http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)
+- [Pipelines With Parameter Optimization](https://chrisalbon.com/machine_learning/model_selection/pipelines_with_parameter_optimization/)
