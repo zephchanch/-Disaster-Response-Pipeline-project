@@ -53,16 +53,29 @@ Our model pipeline has the following structure:
 We used the TF-IDF feature extraction technique with multi-output classification to enable multi-target classification. The model trained with **75%** accuracy.
 
 To improve our model, we used **GridSearchCV** to find the best parameters combination for the model. However, this process took us several hours to complete
- 
-1. Data Visualization
+
+1 Data Visualization
+
+Data visualization was added to the web app using Plotify.
+
 1.1 Distribution of Message Genres related to natural disasters
 
-Data visualization was added to the web app using Plotify. And the visualization was on message genres which are related to natural disasters like(**Weather Related, Floods, Storm, Earthquake**). The aim of this visualization was to show the distribution of these message genres. 
+This visualization is on message genres which are related to natural disasters like(**Weather Related, Floods, Storm, Earthquake**). The aim of this visualization was to show the distribution of these message genres.
 
 ![title](Images/messageGenres.png)
 **Figure 1**
 
 From the graph above, we see clearly that messages related to earthquake record more counts in every genre type. Messages related to floods are almost not reported in the social genre.
+
+1.2 Distribution of Message Genres with a Pie Chart
+
+A similar plot formaly existed, but it was a bar chart. Here, I use a Pie chart to represent the same information.
+
+![title](Images/messageGenresPie.png)
+**Figure 2**
+
+My aim here is to represent the distribution of message genres in percentage. We can see that *News-Genre* represents the majority of the messages with **49.8%**, followed by *Direct-Genre* with **41.1%**, and lastly by *Social Genre* with **9.14%**.
+
 
 ### Note:
 - The GridSearchCV is too expensive. For this project, it took us several hours to complete
