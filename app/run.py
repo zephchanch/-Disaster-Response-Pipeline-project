@@ -126,20 +126,13 @@ def index():
 				 "domain": {"x": [0, .5]},
       			"name": "Genre",
       			"hoverinfo":"label+percent+name",
-      			"hole": .3,
       			"type":"pie"
 				}
 
 
 		],
 	    'layout': {
-	        'title': 'Distribution of Message Genres with a Pie Chart',
-	        'yaxis': {
-	            'title': "Count"
-	        },
-	        'xaxis': {
-	            'title': "Genre"
-	        }
+	        'title': 'Distribution of Message Genres with a Pie Chart'
 	    }
 	}	
 	]
