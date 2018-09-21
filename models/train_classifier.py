@@ -16,6 +16,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import accuracy_score
 
 from sklearn.ensemble import ExtraTreesClassifier
 
@@ -119,7 +120,21 @@ def evaluate_model(model, X_test, Y_test, category_names):
     """
     # predict on test data
     y_pred = model.predict(X_test)
-    print(classification_report(Y_test, y_pred, target_names = category_names))
+    c_report = classification_report(Y_test, y_pred, target_names = category_names)
+
+    # Accuracy score for each category
+    acc = []
+    y_tt = pd.DataFrame(Y_test)
+    y_pp = pd.DataFrame(y_pred)
+    for x in range(len(y_tt.columns)):
+        acc.append(round(accuracy_score(y_tt[x],y_pp[x]),3))
+
+    a_score = pd.DataFrame(acc, columns=['Accuracy_score'], index=category_names)
+
+    print("**********************Classification Report****************************\n")
+    print(c_report)
+    print("\n *********************Accuracy Score **********************************\n")
+    print(a_score)
 
 def save_model(model, model_filepath):
     """
