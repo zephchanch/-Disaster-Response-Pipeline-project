@@ -74,7 +74,7 @@ def index():
 	    ],
 
 	    'layout': {
-	        'title': 'Distribution of Message Genres',
+	        'title': 'Distribution of Message Genres with a Bar Chart',
 	        'yaxis': {
 	            'title': "Count"
 	        },
@@ -110,6 +110,30 @@ def index():
 
 	    'layout': {
 	        'title': 'Distribution of Message Genres related to natural disasters',
+	        'yaxis': {
+	            'title': "Count"
+	        },
+	        'xaxis': {
+	            'title': "Genre"
+	        }
+	    }
+	},
+	{
+		'data':[
+			{
+				"values": genre_counts,
+				"labels": genre_names,
+				 "domain": {"x": [0, .5]},
+      			"name": "Genre",
+      			"hoverinfo":"label+percent+name",
+      			"hole": .3,
+      			"type":"pie"
+				}
+
+
+		],
+	    'layout': {
+	        'title': 'Distribution of Message Genres with a Pie Chart',
 	        'yaxis': {
 	            'title': "Count"
 	        },
